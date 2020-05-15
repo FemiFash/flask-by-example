@@ -3,8 +3,9 @@ from flask import Flask
 
 
 app = Flask(__name__)
-app.config.from_object(os.environ['APP_SETTINGS'])
-
+environment_configuration = os.environ['APP_SETTINGS']
+app.config.from_object(environment_configuration)
+# app.config.from_object(os.environ['APP_SETTINGS'])
 
 
 @app.route('/')
